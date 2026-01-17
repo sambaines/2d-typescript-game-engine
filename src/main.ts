@@ -106,6 +106,12 @@ function render() {
                             newY = Math.min(rows - 1, state.character[1] + 1);
                         }
 
+                        if (event.direction === 'left') {
+                            newX = Math.max(0, state.character[0] - 1);
+                        } else if (event.direction === 'right') {
+                            newX = Math.min(columns - 1, state.character[0] + 1);
+                        }
+
                         state.character = [newX, newY];
                     break;
                 }
